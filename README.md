@@ -29,6 +29,32 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+Real world recommendation systems compare a user's preferences with item features, assign each
+candidate a score, and then rank the highest scoring items first. My version follows that same idea,
+but keeps it simple and interpretable: it will prioritize songs that match the user's genre and mood, 
+stay close to the user's target energy, and optionally use acousticness, valence, danceability, and
+tempo as secondary signals. This makes the recommendations easy to explain while still capturing the
+main patterns in the song data.
+
+Features used in the simulation:
+
+- Song features:
+  - id
+  - title
+  - artist
+  - genre
+  - mood
+  - energy
+  - tempo_bpm
+  - valence
+  - danceability
+  - acousticness
+
+- UserProfile features
+  - favorite_genre
+  - favorite_mood
+  - target_energy
+  - likes_acoustic
 ---
 
 ## Getting Started
