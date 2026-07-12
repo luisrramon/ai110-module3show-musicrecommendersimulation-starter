@@ -1,0 +1,14 @@
+HOW A SINGLE SONG MOVES FROM THE CSV TO A RANKED LIST
+
+Overview:
+Input (User Preferences) --> Process (The Loop: Traverse each song in the CSV using scoring logic) -->
+Output(The Ranking: Top K Recommendations)
+
+Simplified in Numerical Order:
+
+1. Input user Preferences
+2. Loop through every song in the CSV
+3. Score each song using weighted rule
+4. Sort songs by score from the highest to lowest
+5. Return the top K songs.
+

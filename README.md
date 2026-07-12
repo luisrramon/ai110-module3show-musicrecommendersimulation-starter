@@ -19,42 +19,46 @@ Replace this paragraph with your own summary of what your version does.
 
 Explain your design in plain language.
 
-Some prompts to answer:
+My recommender follows a simple content-based pipeline: it compares a user's taste profile to each song in the CSV, gives every song a score, and then sorts the songs from highest score to lowest score. The system prioritizes genre first, mood second, and energy closeness third so that the results stay easy to interpret and debug. This means the recommender should favor songs that feel like the user's preferred style, but still reward songs whose numeric features are close to the user's target values.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+Algorithm Recipe:
 
-You can include a simple diagram or bullet list if helpful.
-
-Real world recommendation systems compare a user's preferences with item features, assign each
-candidate a score, and then rank the highest scoring items first. My version follows that same idea,
-but keeps it simple and interpretable: it will prioritize songs that match the user's genre and mood, 
-stay close to the user's target energy, and optionally use acousticness, valence, danceability, and
-tempo as secondary signals. This makes the recommendations easy to explain while still capturing the
-main patterns in the song data.
+1. Read each song from `data/songs.csv`.
+2. Compare the song to the user profile.
+3. Give a categorical match point for `genre` and `mood`.
+4. Compute an energy similarity score using closeness instead of exact match:
+   - `energy_similarity = max(0, 1 - abs(song_energy - target_energy))`
+5. Combine the parts into one final score with genre weighted more than mood:
+   - `final_score = 0.5 * genre_match + 0.2 * mood_match + 0.3 * energy_similarity`
+6. Sort all songs by final score in descending order.
+7. Return the top `K` recommendations with a short explanation for each one.
 
 Features used in the simulation:
 
 - Song features:
-  - id
-  - title
-  - artist
-  - genre
-  - mood
-  - energy
-  - tempo_bpm
-  - valence
-  - danceability
-  - acousticness
+  - `id`
+  - `title`
+  - `artist`
+  - `genre`
+  - `mood`
+  - `energy`
+  - `tempo_bpm`
+  - `valence`
+  - `danceability`
+  - `acousticness`
 
-- UserProfile features
-  - favorite_genre
-  - favorite_mood
-  - target_energy
-  - likes_acoustic
+- UserProfile features:
+  - `favorite_genre`
+  - `favorite_mood`
+  - `target_energy`
+  - `likes_acoustic`
+
+Potential biases and limitations:
+
+- The system may over-prioritize genre and miss songs that match the user's mood or energy better.
+- It may under-rank songs from smaller or less common genres because the catalog is tiny.
+- It does not use lyrics, listening history, or context, so it can miss more subtle taste patterns.
+- If the weights are too strong, the recommender can become narrow and keep returning very similar songs.
 ---
 
 ## Getting Started
