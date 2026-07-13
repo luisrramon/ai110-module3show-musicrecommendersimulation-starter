@@ -147,6 +147,152 @@ Top recommendations:
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
+```
+%  .venv/bin/python -m src.main
+Loading songs from data/songs.csv...
+Loaded songs: 18
+
+=== High-Energy Pop ===
+User prefs: {'genre': 'pop', 'mood': 'happy', 'energy': 0.9}
+Top recommendations:
+
+1. Sunrise City by Neon Echo
+   Score: 5.76
+   Reasons:
+   - genre match (+2.0)
+   - mood match (+1.0)
+   - energy closeness (+2.76)
+
+2. Gym Hero by Max Pulse
+   Score: 4.91
+   Reasons:
+   - genre match (+2.0)
+   - energy closeness (+2.91)
+
+3. Rooftop Lights by Indigo Parade
+   Score: 3.58
+   Reasons:
+   - mood match (+1.0)
+   - energy closeness (+2.58)
+
+4. Storm Runner by Voltline
+   Score: 2.97
+   Reasons:
+   - energy closeness (+2.97)
+
+5. Harbor Lights by Signal Tide
+   Score: 2.94
+   Reasons:
+   - energy closeness (+2.94)
+
+
+=== Chill Lofi ===
+User prefs: {'genre': 'lofi', 'mood': 'chill', 'energy': 0.4, 'likes_acoustic': True}
+Top recommendations:
+
+1. Midnight Coding by LoRoom
+   Score: 6.44
+   Reasons:
+   - genre match (+2.0)
+   - mood match (+1.0)
+   - energy closeness (+2.94)
+   - acoustic preference (+0.5)
+
+2. Library Rain by Paper Lanterns
+   Score: 6.35
+   Reasons:
+   - genre match (+2.0)
+   - mood match (+1.0)
+   - energy closeness (+2.85)
+   - acoustic preference (+0.5)
+
+3. Focus Flow by LoRoom
+   Score: 5.50
+   Reasons:
+   - genre match (+2.0)
+   - energy closeness (+3.00)
+   - acoustic preference (+0.5)
+
+4. Spacewalk Thoughts by Orbit Bloom
+   Score: 4.14
+   Reasons:
+   - mood match (+1.0)
+   - energy closeness (+2.64)
+   - acoustic preference (+0.5)
+
+5. Coffee Shop Stories by Slow Stereo
+   Score: 3.41
+   Reasons:
+   - energy closeness (+2.91)
+   - acoustic preference (+0.5)
+
+
+=== Deep Intense Rock ===
+User prefs: {'genre': 'rock', 'mood': 'intense', 'energy': 0.95}
+Top recommendations:
+
+1. Storm Runner by Voltline
+   Score: 5.88
+   Reasons:
+   - genre match (+2.0)
+   - mood match (+1.0)
+   - energy closeness (+2.88)
+
+2. Gym Hero by Max Pulse
+   Score: 3.94
+   Reasons:
+   - mood match (+1.0)
+   - energy closeness (+2.94)
+
+3. Desert Mirage by Nomad Circuit
+   Score: 2.91
+   Reasons:
+   - energy closeness (+2.91)
+
+4. Harbor Lights by Signal Tide
+   Score: 2.79
+   Reasons:
+   - energy closeness (+2.79)
+
+5. Sunrise City by Neon Echo
+   Score: 2.61
+   Reasons:
+   - energy closeness (+2.61)
+
+
+=== Conflicting Edge Case ===
+User prefs: {'genre': 'pop', 'mood': 'sad', 'energy': 0.9}
+Top recommendations:
+
+1. Gym Hero by Max Pulse
+   Score: 4.91
+   Reasons:
+   - genre match (+2.0)
+   - energy closeness (+2.91)
+
+2. Sunrise City by Neon Echo
+   Score: 4.76
+   Reasons:
+   - genre match (+2.0)
+   - energy closeness (+2.76)
+
+3. Storm Runner by Voltline
+   Score: 2.97
+   Reasons:
+   - energy closeness (+2.97)
+
+4. Harbor Lights by Signal Tide
+   Score: 2.94
+   Reasons:
+   - energy closeness (+2.94)
+
+5. Desert Mirage by Nomad Circuit
+   Score: 2.94
+   Reasons:
+   - energy closeness (+2.94)
+
+```
+
 ---
 
 ## Experiments You Tried
