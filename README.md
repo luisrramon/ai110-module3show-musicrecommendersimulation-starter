@@ -100,6 +100,42 @@ You can add more tests in `tests/test_recommender.py`.
 
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
 
+%  .venv/bin/python -m src.main
+Loading songs from data/songs.csv...
+Loaded songs: 18
+
+Top recommendations:
+
+1. Sunrise City by Neon Echo
+   Score: 5.94
+   Reasons:
+   - genre match (+2.0)
+   - mood match (+1.0)
+   - energy closeness (+2.94)
+
+2. Gym Hero by Max Pulse
+   Score: 4.61
+   Reasons:
+   - genre match (+2.0)
+   - energy closeness (+2.61)
+
+3. Rooftop Lights by Indigo Parade
+   Score: 3.88
+   Reasons:
+   - mood match (+1.0)
+   - energy closeness (+2.88)
+
+4. Sunlit Arcade by Pixel Bloom
+   Score: 2.97
+   Reasons:
+   - energy closeness (+2.97)
+
+5. Night Drive Loop by Neon Echo
+   Score: 2.85
+   Reasons:
+   - energy closeness (+2.85)
+
+
 ```
 # e.g.:
 # User profile: genre=indie, mood=chill, energy=low
